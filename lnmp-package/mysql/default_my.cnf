@@ -1,0 +1,25 @@
+[client]
+port            = 3306
+socket          = lnmp_root_path/server/mysql-5.7.20/tmp/mysql.sock
+[mysqld]
+basedir=lnmp_root_path/server/mysql-5.7.20
+datadir=lnmp_root_path/server/mysql-5.7.20/data
+socket=lnmp_root_path/server/mysql-5.7.20/tmp/mysql.sock
+#skip-external-locking
+# Disabling symbolic-links is recommended to prevent assorted security risks
+symbolic-links=0
+# Settings user and group are ignored when systemd is used.
+# If you need to run mysqld under a different user or group,
+# customize your systemd unit file for mariadb according to the
+# instructions in http://fedoraproject.org/wiki/Systemd
+log-error=lnmp_root_path/logs/mysql/error.log
+pid-file=lnmp_root_path/logs/mysql/mysql.pid
+
+[mysqld_safe]
+log-error=lnmp_root_path/logs/mariadb/error.log
+pid-file=lnmp_root_path/logs/mariadb/mariadb.pid
+
+#
+# include all files from the config directory
+#
+!includedir /etc/my.cnf.d

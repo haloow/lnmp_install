@@ -1,0 +1,9 @@
+#User: Created By ZhouLe
+#time: 2019/04/11
+
+#create a dir
+function Mkdir {
+    if [ ! -d $1 ];then
+        mkdir -p $1
+    fi
+}
